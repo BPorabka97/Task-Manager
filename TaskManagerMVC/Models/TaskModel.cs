@@ -13,11 +13,9 @@ namespace TaskManagerMVC.Models
     {
         [Key]
         public int TaskID { get; set; }
-        [DisplayName("Nazwa")]
         [Required(ErrorMessage = "Pole Nazwa jest wymagane")]
         [MaxLength(50)]
         public string Name { get; set; }
-        [DisplayName("Opis")]
         [MaxLength(2000)]
         public string Description { get; set; }
         public bool Done { get; set; }

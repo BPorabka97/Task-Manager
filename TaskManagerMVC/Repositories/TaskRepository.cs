@@ -15,8 +15,12 @@ namespace TaskManagerMVC.Repositories
         }
         public TaskModel Get(int taskID)
             => _context.Tasks.SingleOrDefault(x => x.TaskID == taskID);
+
         public IQueryable<TaskModel> GetAllActive()
             => _context.Tasks.Where(x => x.Done == false);
+
+        public IQueryable<TaskModel> GetAllDone()
+            => _context.Tasks.Where(x => x.Done == true);
 
         public void Add(TaskModel task)
         {

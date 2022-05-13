@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\barto\\Desktop\\Git\\TaskManagerMVC\\TaskManagerMVC.csproj": {}
+    "C:\\Users\\barto\\Desktop\\TaskManagerMVC\\TaskManagerMVC\\TaskManagerMVC.csproj": {}
   },
   "projects": {
-    "C:\\Users\\barto\\Desktop\\Git\\TaskManagerMVC\\TaskManagerMVC.csproj": {
+    "C:\\Users\\barto\\Desktop\\TaskManagerMVC\\TaskManagerMVC\\TaskManagerMVC.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\barto\\Desktop\\Git\\TaskManagerMVC\\TaskManagerMVC.csproj",
+        "projectUniqueName": "C:\\Users\\barto\\Desktop\\TaskManagerMVC\\TaskManagerMVC\\TaskManagerMVC.csproj",
         "projectName": "TaskManagerMVC",
-        "projectPath": "C:\\Users\\barto\\Desktop\\Git\\TaskManagerMVC\\TaskManagerMVC.csproj",
+        "projectPath": "C:\\Users\\barto\\Desktop\\TaskManagerMVC\\TaskManagerMVC\\TaskManagerMVC.csproj",
         "packagesPath": "C:\\Users\\barto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\barto\\Desktop\\Git\\TaskManagerMVC\\obj\\",
+        "outputPath": "C:\\Users\\barto\\Desktop\\TaskManagerMVC\\TaskManagerMVC\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -44,6 +44,10 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "dependencies": {
+            "Microsoft.AspNet.WebPages": {
+              "target": "Package",
+              "version": "[3.2.8, )"
+            },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
               "version": "[5.0.13, )"
@@ -71,7 +75,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.407\\RuntimeIdentifierGraph.json"
         }
       }
     }

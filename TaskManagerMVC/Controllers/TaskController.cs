@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using TaskManagerMVC.Models;
 using TaskManagerMVC.Repositories;
+using Newtonsoft.Json;
+using System.Web.Helpers;
 
 namespace TaskManagerMVC.Controllers
 {
@@ -29,7 +31,7 @@ namespace TaskManagerMVC.Controllers
             return View(_taskRepository.Get(id));
         }
 
-        // GET: TaskController/Create
+        // GET: Task/Create
         public ActionResult Create()
         {
             return View(new TaskModel());
@@ -43,6 +45,12 @@ namespace TaskManagerMVC.Controllers
             _taskRepository.Add(taskModel);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        // GET: Task/SeeDone
+        public ActionResult SeeDone()
+        {
+            return View(_taskRepository.GetAllDone());
         }
 
         // GET: Task/Edit/5
@@ -77,7 +85,7 @@ namespace TaskManagerMVC.Controllers
             return RedirectToAction(nameof(Index));
 
         }
-        //GET: Task/Done
+        //GET: Task/Done/5
         public ActionResult Done(int id)
         {
             TaskModel task = _taskRepository.Get(id);
@@ -85,6 +93,31 @@ namespace TaskManagerMVC.Controllers
             _taskRepository.Update(id, task);
 
             return RedirectToAction(nameof(Index));
+        }
+
+        //GET: Task/Restore/5
+        public ActionResult Restore (int id)
+        {
+            TaskModel task = _taskRepository.Get(id);
+            task.Done = false;
+            _taskRepository.Update(id, task);
+
+            return RedirectToAction(nameof(Index));
+        }
+
+        public ActionResult Chart()
+        {
+            var chart = new Chart(width: 600, height: 400)
+                   .AddTitle("Chart")
+                .AddSeries(
+                chartType: "line",
+                legend: "Rainfall",
+                xValue: new[] { "Jan", "Feb", "Mar", "Apr", "May" },
+                yValues: new[] { "20", "20", "40", "10", "10" }).AddSeries(chartType: "line", yValues: new[] { "30", "40", "50", "60", "70" })
+        .GetBytes("png");
+
+
+            return File(chart, "image/png");
         }
     }
 }
